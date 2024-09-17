@@ -1,0 +1,212 @@
+/* 
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 25px; 
+  width: 50%; 
+  max-width: 400px; 
+  margin: 0 auto; 
+  background-color: #1a3636; 
+}
+
+.searchBar input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff; 
+  background-color: #2b4b4b; 
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: #ddd; 
+}
+.searchBar button {
+  background-color: #ffcc00; 
+  border: none;
+  border-radius: 25px;
+  color: #1a3636;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px; 
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; 
+}
+
+.searchBar button:hover {
+  background-color: #e6b800; 
+}
+.searchResults {
+  position: absolute;
+  top: 50px; 
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.searchResultItem {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+
+.searchResultItem:hover {
+  background-color: #f76503; 
+  color: #1a3636; 
+}
+
+.searchResultItem {
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  color: #1a3636;
+} */
+
+
+
+/* Search bar container */
+.searchBar {
+  width: 100%;
+  max-width: 400px; /* Reduced from 600px to 400px */
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* To position the button inside the input */
+  /* Adding left margin to move the search bar to the left */
+  margin-left: 1%; /* Adjust this value to shift the search bar as needed */
+}
+
+/* Input field styling */
+.searchBar input {
+  width: 100%;
+  padding: 8px 40px 8px 15px; /* Reduced padding */
+  border: 2px solid #ccc;
+  border-radius: 40px; /* More compact */
+  font-size: 14px; /* Reduced font size */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  outline: none;
+  position: relative;
+  background-color: #fad1b2; /* Dark background for the input */
+  color: black; /* White text color */
+}
+
+/* Input field focus effect */
+.searchBar input:focus {
+  border-color: #fad1b2;
+}
+
+/* Search button styling (inside input) */
+.searchBar button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 15px; /* Reduced padding */
+  background-color: #ff6200;
+  color: rgb(0, 0, 0);
+  
+  border: none;
+  border-radius: 31px; /* More compact to fit within input */
+  cursor: pointer;
+  font-size: 14px; /* Reduced font size */
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.searchBar button:hover {
+  background-color: #f86c14;
+}
+
+/* Search results container */
+.searchResults {
+  position: absolute;
+  top: 45px; /* Adjusted for smaller input size */
+  width: 100%; /* Matches input width */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 200px; /* Reduced max-height */
+  overflow-y: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 8px 0; /* Adjusted padding */
+}
+
+/* Individual result item */
+.searchResultItem {
+  padding: 10px; /* Reduced padding */
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000; /* Default text color */
+}
+
+/* Result text */
+.searchResultItem span {
+  font-size: 13px; /* Reduced font size */
+  color: inherit; /* Ensure the color from parent is applied */
+}
+
+/* Highlight result item on hover */
+.searchResultItem:hover {
+  background-color: #e83706;
+  color: black; /* Change text color on hover */
+}
+
+/* Styling for the last search result item to remove the border */
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+.search{
+  height: 20px;
+  width: 20px;
+  padding-top: 3px;
+  
+}
+/* No products found message styling */
+/* .searchResults .searchResultItem {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+} */
+
+/* Media query for screens with max-width of 568px */
+@media only screen and (max-width: 568px) {
+  .searchBar input {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .searchBar button {
+    display: inline-block;
+  }
+  
+  .searchBar input {
+    width: calc(100% - 48px); /* Shrink input width to make space for icon */
+  }
+
+  .searchResults {
+    top: 44px; /* Adjust position slightly */
+  }
+}

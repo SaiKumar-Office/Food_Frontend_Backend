@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.topBarSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 90%;
+    min-width: 80%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.companyTitle {
+  display: flex;
+  align-items: center; 
+}
+
+.link {
+  display: flex;
+  align-items: center; 
+  text-decoration: none; 
+}
+
+.companyTitle h2 {
+  margin-right: 10px; 
+  color: orangered;
+    text-decoration: none;
+    font-family: QuickSand, sans-serif; 
+}
+
+.companyTitle img {
+  height: 70px;
+  width: auto;
+}
+
+
+
+/* .companyTitle h2 {
+    color: orangered;
+    text-decoration: none;
+    font-family: QuickSand, sans-serif;
+    
+} */
+
+.login {
+    text-decoration: none;
+    color: orangered;
+    margin-right: 10px;
+    font-size: large;
+
+}
+.logout {
+    text-decoration: none;
+    color: orangered;
+    margin-right: 30px;
+    margin-left: 10px;
+    font-size: large;
+
+}
+.register {
+    text-decoration: none;
+    color: orangered;
+    margin-left: 10px;
+    font-size: large;
+}
+.userAuth span:hover {
+    opacity: 1;
+}
+.welcome{
+  margin-right: 40px;
+  
+
+}
+.cartIcon {
+    cursor: pointer;
+    width: 25px;
+    height: auto;
+    color: orangered;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.orderIcon {
+  vertical-align: middle;
+  cursor: pointer;
+  width: 25px;
+  height: auto;
+  color: orangered;
+  margin-bottom: 8px;
+}
+
+/* loginSection */
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh; 
+  margin-top: 100px;
+}
+.registerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh; 
+  margin-top: 100px;
+}
+
+
+.authForm {
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+  max-width: 400px; 
+  width: 100%; 
+}
+
+
+.authForm h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: black; /* Dark text color */
+}
+
+
+.authForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1A3636; /* Dark text color */
+}
+
+
+.authForm input {
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  font-size: 1rem;
+}
+
+
+.showPassword {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Aligns it to the right inside the input */
+  transform: translateY(-50%); /* Vertically centers the button */
+  cursor: pointer;
+  margin-right: 405px;
+  margin-top: 65px;
+ 
+  font-size: 0.9rem;
+}
+
+
+.errorMessage {
+  color: black; /* Red color for errors */
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+
+.btnSubmit button {
+  background-color: orangered; /* Gold background */
+  color: black; /* Dark text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btnSubmit button:hover {
+  background-color: #e0a800; 
+}
+
+
+/* item section */
+.itemSection {
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.gallery {
+    width: 150px;
+}
+
+.gallery img {
+    width: 100%;
+}
+/* Landing Page */
+.landingSection {
+    padding: 0 120px;
+}
+/* chainSection */
+.chainSection {
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+    height: auto;
+}
+
+.vendorBox {
+    border-radius: 10px;
+}
+
+.vendorBox img {
+    width: 350px;
+    height: 220px;
+    flex: 0 0 auto;
+    margin-right: 30px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btnSection {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 50px;
+    right: 10px;
+    gap: 10px;
+    
+}
+
+.btnSection button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btnIcons {
+    font-size: x-large;
+}
+
+
+
+
+/* firmSection */
+.firmSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* border: 2px solid black; */
+    margin-right: 20px;
+    
+}
+.filterButton {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.filterButton button {
+    width: 10rem;
+    padding: 5px 0;
+    color: orangered;
+    border-radius: 25px;
+    border: 0.5px solid black;
+    cursor: pointer;
+}
+
+.firmGroup {
+    position: relative;
+    transition: transform 0.3s ease;
+    
+}
+.firmGroup:hover {
+  transform: scale(1.07);
+    
+}
+
+
+.firmGroup img {
+    width: 280px;
+    height: 180px;
+    flex: 0 0 auto;
+    margin-right: 30px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.firmOffer {
+    width: 100%;
+    max-width: 85%;
+    position: absolute;
+    bottom: 5px;
+    padding-left: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: transparent;
+    background: linear-gradient(to bottom, rgba(50, 0, 0, 0.08), black);
+    color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+     text-transform: uppercase; 
+}
+
+.firmDetails {
+    padding-left: 10px;
+    
+}
+
+.firmDetails ul li {
+    list-style: none;
+}
+.firmName {
+    color: black;
+}
+
+.firmArea {
+    font-size: small;
+    color: gray;
+} 
+
+
+
+
+
+/* productSection */
+
+.productSection {
+    display: flex;
+    flex-direction: column;
+    padding: 0 150px;
+    margin-top: 100px;
+}
+
+.productBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-top: 2px solid lightgray;
+  position: relative;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.productBox:hover {
+  transform: scale(1.02);
+}
+
+.productGroup img {
+    width: 100px;
+    border-radius: 5px;
+}
+.addButton {
+    border: 1px solid lightgray;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    color: green;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    max-width: 80px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+/* loaderSection */
+
+.loaderSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    .topBarSection {
+        padding: 0 20px;
+    }
+    .cart {
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px;
+    }
+  
+    .cartIcon {
+      font-size: 24px; /* Smaller cart icon */
+    }
+  
+    .cartCount {
+      top: -5px;
+      right: -5px;
+      font-size: 10px; /* Smaller cart count */
+      padding: 2px 4px; /* Reduced padding for smaller screens */
+    }
+    .landingSection {
+        padding: 0 10px;
+    }
+    .itemSection {
+        margin-top: 80px;
+    }
+    h3 {
+        font-weight: 800;
+        font-size: medium;
+        color: rgb(34, 30, 30);
+    }
+    .chainSection {
+        height: 190px;
+    }
+    .vendorBox img {
+        width: 260px;
+        height: 180px;
+        flex: 0 0 auto;
+        margin-right: 30px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .mediaChainSection {
+        margin-top: -30px;
+    }
+    .firmSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+    }
+    .firmOffer {
+        position: absolute;
+        width: 100%;
+        max-width: 88%;
+    }
+    .firmGroup img {
+        width: 300px;
+    }
+    
+    .productSection {
+        padding: 0 10px;
+    }
+    .productSection h3 {
+        text-align: center;
+        background-color: orange;
+    }
+    .searchBar {
+        border: 1px solid red;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .searchBar input {
+        width: 100%;
+        max-width: 50%;
+    }
+    .filterButtons button {
+        width: 5rem;
+        padding: 5px;
+        margin-right: 5px;
+    }
+    .userAuth {
+        margin-right: 10px;
+    }
+    .btnIcons {
+        font-size: large;
+        gap: 2px;
+    }
+    .chainTitle {
+        position: relative;
+        top: -10px;
+    }
+    .loaderSection {
+        position: relative;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        top: 100px;
+    }
+}
+
+/* Cart Section */
+.cartSection {
+  padding: 90px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+.cartSection h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.cartBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.cartBox img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cartBox > div {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.cartBox strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.cartBox div > div {
+  margin-top: 10px;
+  color: #555;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  
+  margin-top: 10px;
+}
+
+.quantityControl button {
+  background-color: #1A3636;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 25px;  /* Ensures both buttons have equal width */
+  height: 25px; /* Makes the buttons square for uniformity */
+  display: inline-flex; /* Centers the text inside the button */
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  
+}
+
+.quantityControl button:hover {
+  background-color: #333;
+}
+
+
+/* .quantityControl button {
+  background-color: #1A3636;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;  
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantityControl button:hover {
+  background-color: #333;
+} */
+
+.quantityControl span {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.cartGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 150px;
+  
+}
+
+.removeButton {
+  margin-top: 10px;
+  background-color: #f84205;
+  color: white !important; /* Ensuring the default color is applied */
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.removeButton:hover {
+  background-color: #ff1a1a;
+  color: yellow ; /* Added !important to override other styles */
+}
+
+
+/* Empty Cart Message */
+.cartSection p {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+}
+
+.checkout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.checkoutButton {
+  background-color: #1A3636;
+  color: gold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.checkoutButton:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+
+.cartButtonContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.cartButton {
+  background-color: #1A3636;
+  color: gold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cartButton:hover {
+  background-color: #333;
+}
+.payment{
+  text-decoration: none;
+  color: gold;
+}
