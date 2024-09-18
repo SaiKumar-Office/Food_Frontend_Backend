@@ -1,14 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const { getOrderStatus, updateOrderStatus, createOrder } = require('../controllers/orderController');
-
-// Route to get the status of a specific order
-router.get('/:orderId/status', getOrderStatus);
-
-// Route for admin to update the order status
-router.put('/:orderId/status', updateOrderStatus);
+const orderController = require('../controllers/orderController');
 
 // Create a new order
-router.post('/orders', createOrder);
+router.post('/orders', orderController.createOrder);
+
+// Get order status by order ID
+router.get('/:orderId/status', orderController.getOrderStatus);
+
+// Update order status by admin
+router.put('/:orderId/status', orderController.updateOrderStatus);
+
+// Get all orders by user ID
+router.get('/user/:userId', orderController.getAllOrdersByUser);
+
+// get all orders
+router.get('/all-orders', orderController.getAllOrders);
+
+// Route to get orders by firm ID
+router.get('/firm/:firmId', orderController.getAllOrdersByFirm);
 
 module.exports = router;

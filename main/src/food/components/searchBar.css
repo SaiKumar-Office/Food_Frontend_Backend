@@ -116,7 +116,7 @@
 /* Search button styling (inside input) */
 .searchBar button {
   position: absolute;
-  right: 6px;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
   padding: 5px 15px; /* Reduced padding */

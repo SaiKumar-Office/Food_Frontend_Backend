@@ -44,6 +44,16 @@ const TopBar = ({ cartItemCount }) => {
       navigate('/cart'); 
     }
   };
+  const handleOrderClick = () => {
+    if (!isLoggedIn) {
+      
+      setTimeout(() => {
+        navigate('/login'); 
+      }, 0); 
+    } else {
+      navigate('/order'); 
+    }
+  };
 
   return (
     <section className='topBarSection'>
@@ -100,7 +110,7 @@ const TopBar = ({ cartItemCount }) => {
           </>
         )}
       </div>
-      <Link to='/order'><div className="order"><RiWeightLine className='orderIcon'/></div></Link>
+      <Link to='/order'><div className="order"><RiWeightLine className='orderIcon' onClick={handleOrderClick} /></div></Link>
       <div className='cart'>
         <HiShoppingCart className='cartIcon' onClick={handleCartClick}/>
         <span className='cartCount'>{cartItemCount}</span> 

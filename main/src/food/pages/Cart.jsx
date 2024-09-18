@@ -50,21 +50,44 @@ const Cart = () => {
   // Handle Proceed to Checkout
   const handleCheckout = async () => {
     try {
-      // Send API request to update product quantities in backend
-      const response = await fetch(`${API_URL}/product/update-quantities`, {
+      // Retrieve userId from localStorage
+      const userId = localStorage.getItem('userId');
+      
+      // Check if userId exists
+      if (!userId) {
+        alert('User not logged in. Please log in to proceed.');
+        return;
+      }
+  
+      // Prepare the order data
+      const orderData = {
+        userId: userId, // Use userId from localStorage
+        items: cartItems,
+        totalPrice: getTotalPrice()
+      };
+  
+      // Send the order to the backend
+      const response = await fetch(`${API_URL}/orders/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cartItems }), // Send the cart items with quantities
+        body: JSON.stringify(orderData),
       });
-
+  
       if (response.ok) {
-        
+        const result = await response.json();
+        console.log('Order placed successfully:', result);
+  
+        // Clear the cart
         localStorage.removeItem('cartItems');
         setCartItems([]);
-        navigate('/payment');
+  
+        // Navigate to the payment page
+        navigate(`/payment`);
       } else {
+        const errorData = await response.json();
+        console.error('Failed to place order:', errorData.error);
         alert('Failed to checkout. Please try again.');
       }
     } catch (error) {
@@ -72,40 +95,40 @@ const Cart = () => {
       alert('Failed to checkout. Please try again.');
     }
   };
+  
 
   return (
     <>
       <TopBar />
       <section className="cartSection">
-      <div style={{ margin: '5px 0' }}>
-  <button
-    onClick={() => navigate(-1)}
-    style={{
-      padding: '10px 20px', 
-      backgroundColor: '#1A3636', 
-      color: 'white', 
-      border: 'none', 
-      borderRadius: '5px', 
-      cursor: 'pointer', 
-      fontSize: '16px', 
-      fontWeight: 'bold', 
-      transition: 'background-color 0.3s ease, transform 0.3s ease',
-      display: 'inline-flex', 
-      alignItems: 'center',
-      
-    }}
-    onMouseOver={(e) => {
-      e.target.style.backgroundColor = '#333';
-      e.target.style.transform = 'scale(1.05)';
-    }}
-    onMouseOut={(e) => {
-      e.target.style.backgroundColor = '#1A3636';
-      e.target.style.transform = 'scale(1)';
-    }}
-  >
-    &larr; Back
-  </button>
-</div>
+        <div style={{ margin: '5px 0' }}>
+          <button
+            onClick={() => navigate(-1)}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#1A3636',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = '#333';
+              e.target.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = '#1A3636';
+              e.target.style.transform = 'scale(1)';
+            }}
+          >
+            &larr; Back
+          </button>
+        </div>
         <h3>Your Cart</h3>
         {cartItems.length > 0 ? (
           <>
@@ -127,16 +150,16 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-            
+
             {/* Total Price Display */}
             <div className="totalPrice">
               <h4>Total Price: ₹{getTotalPrice()}</h4>
             </div>
-            
+
             {/* Checkout Button */}
             <div className="checkout">
               <button onClick={handleCheckout} className="checkoutButton">
-                <Link to='/payment' className='payment'>Proceed to Checkout</Link>
+                Proceed to Checkout
               </button>
             </div>
           </>

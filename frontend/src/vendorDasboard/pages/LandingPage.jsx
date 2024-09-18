@@ -179,6 +179,7 @@ import AddProduct from '../components/forms/AddProduct'
 import Welcome from '../components/Welcome'
 import AllProducts from '../components/AllProducts'
 import Footer from '../components/Footer'
+import UserDetails from '../components/UserDetails'
 
 
 const LandingPage = () => {
@@ -190,6 +191,7 @@ const LandingPage = () => {
   const [showAllProducts, setShowAllProducts] = useState(false);
   const [showLogOut, setShowLogOut] = useState(false)
   const [showFirmTitle, setShowFirmTitle] = useState(true)
+  const [showUserDetails, setShowUserDetails] = useState(false)
 
   useEffect(()=>{
     const loginToken = localStorage.getItem('loginToken');
@@ -227,6 +229,7 @@ const showLoginHandler =()=>{
     setShowProduct(false)
     setShowWelcome(false)
     setShowAllProducts(false)
+    setShowUserDetails(false);
 
 }
 
@@ -237,6 +240,7 @@ const showRegisterHandler = ()=>{
     setShowProduct(false)
     setShowWelcome(false)
     setShowAllProducts(false)
+    setShowUserDetails(false);
 
 }
 
@@ -248,6 +252,7 @@ const showFirmHandler = ()=>{
     setShowProduct(false)
     setShowWelcome(false)
     setShowAllProducts(false)
+    setShowUserDetails(false);
   }else{
     alert("please login");
     setShowLogin(true)
@@ -261,6 +266,7 @@ const showProductHandler = ()=>{
     setShowProduct(true)
     setShowWelcome(false)
     setShowAllProducts(false)
+    setShowUserDetails(false);
     }else{
         alert("please login")
         setShowLogin(true)
@@ -274,6 +280,7 @@ const showWelcomeHandler = ()=>{
     setShowProduct(false)
     setShowWelcome(true)
     setShowAllProducts(false)
+    setShowUserDetails(false);
 
 }
 const showAllProductsHandler = ()=>{
@@ -284,6 +291,7 @@ const showAllProductsHandler = ()=>{
     setShowProduct(false)
     setShowWelcome(false)
     setShowAllProducts(true)
+    setShowUserDetails(false); 
 
 }else{
     alert("please login")
@@ -291,20 +299,20 @@ const showAllProductsHandler = ()=>{
  }
  
 }
-const showUserDetailsHandler = () => {
-      if (showLogOut) {
-        setShowRegister(false);
-        setShowLogin(false);
-        setShowFirm(false);
-        setShowProduct(false);
-        setShowWelcome(false);
-        setShowAllProducts(false);
-        setShowUserDetails(true); // Show the UserDetails component
-      } else {
-        alert("Please login first.");
-        setShowLogin(true); // Redirect to login if not logged in
-      }
-    };
+  const showUserDetailsHandler = () => {
+    if (showLogOut) {
+      setShowRegister(false);
+      setShowLogin(false);
+      setShowFirm(false);
+      setShowProduct(false);
+      setShowWelcome(false);
+      setShowAllProducts(false);
+      setShowUserDetails(true); // Show the UserDetails component
+    } else {
+      alert("Please login first.");
+      setShowLogin(true); // Redirect to login if not logged in
+    }
+  };
 
 
   return (
@@ -327,6 +335,7 @@ const showUserDetailsHandler = () => {
           {showProduct && showLogOut && <AddProduct />}
           {showWelcome && <Welcome />}
           {showAllProducts && showLogOut && <AllProducts />}
+          {showUserDetails && showLogOut && <UserDetails />}
           {showLogin && <Login showWelcomeHandler ={showWelcomeHandler}/>}
           {showRegister && <Register showLoginHandler = {showLoginHandler}/>}
         
