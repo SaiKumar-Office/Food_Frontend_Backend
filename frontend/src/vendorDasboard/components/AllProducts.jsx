@@ -115,7 +115,7 @@ const decreaseQuantity = async (productId) => {
                     )}
                   </td>
                   <td>
-                    {/* <button onClick={() => deleteProductById(item._id)}>Delete</button> */}
+                    <button onClick={() => deleteProductById(item._id)}>Delete</button>
                   </td>
                 </tr>
               );
