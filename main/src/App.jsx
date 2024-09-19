@@ -11,6 +11,7 @@ import Register from './food/components/Register'
 import Payment from './food/pages/Payment'
 import SingleProduct from './food/components/SingleProduct'
 import Order from './food/pages/Order'
+import Terms from './food/pages/Terms'
 
 
 
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/terms&policy" element={<Terms />} />
       </Routes>
       
     </div>

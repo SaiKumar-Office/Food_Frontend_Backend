@@ -13,6 +13,7 @@ const Payment = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [cycleCount, setCycleCount] = useState(0);
   const [orderStatus, setOrderStatus] = useState('Processing your order...');
+  
   const totalCycles = 2; 
 
   // Show text after a delay
@@ -75,7 +76,15 @@ const Payment = () => {
         ) : (
           <>
             <img className="gif" src={logo} alt="loading..." />
-            <Link to='/'><button>Back to Home</button></Link>
+            <div className="buttonContainer">
+              <Link to="/">
+                <button className="back">Back to Home</button>
+              </Link>
+              <Link to="/order">
+                <button className="back">Your Orders</button>
+              </Link>
+            </div>
+
           </>
         )}
         

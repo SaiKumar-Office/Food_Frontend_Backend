@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { HiShoppingCart } from "react-icons/hi";
 import {FidgetSpinner} from 'react-loader-spinner'
 import { RiWeightLine } from "react-icons/ri";
-
+// import { FaQuestionCircle } from "react-icons/fa";
 import SearchBar from './SearchBar';
 import Order from '../pages/Order';
 
@@ -99,6 +99,8 @@ const TopBar = ({ cartItemCount }) => {
     }
         
       </div>
+      {/* <Link to='/terms'>
+      <FaQuestionCircle /></Link> */}
       <div>
         {isLoggedIn ? (
           <span onClick={handleLogout} style={{ cursor: 'pointer' }} className='logout'>

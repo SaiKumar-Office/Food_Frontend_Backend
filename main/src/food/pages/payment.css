@@ -132,3 +132,33 @@
     height: 120px;
   }
 }
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  gap: 15px; /* Space between buttons */
+  margin: 20px 0; /* Optional: Margin around the button container */
+  
+}
+
+.buttonContainer button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1A3636;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonContainer button:hover {
+  background-color: #154545;
+}
+
+.buttonContainer .back {
+  background-color: #1A3636;
+  color: gold; /* You can customize button colors individually if needed */
+}
+
+
+

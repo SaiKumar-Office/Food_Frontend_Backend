@@ -30,8 +30,8 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Legal</h4>
           <ul>
-            <li><a href="/terms">Terms & Conditions</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms&policy">Terms & Conditions</a></li>
+            <li><a href="/terms&policy">Privacy Policy</a></li>
           </ul>
         </div>
 
