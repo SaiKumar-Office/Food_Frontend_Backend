@@ -20,6 +20,7 @@ const AllProducts = () => {
   }, []);
 
   // Function to update product quantity
+  
   const updateProductQuantity = async (productId, quantityChange) => {
     try {
         const response = await fetch(`${API_URL}/product/update-quantity`, {
