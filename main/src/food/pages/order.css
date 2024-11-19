@@ -105,7 +105,7 @@ body {
   background-color: #f4f4f4;
 }
 
-.orderBox .dropdown:hover .dropdown-content {
+.orderBox  .dropdown-content {
   display: block;
 }
 
